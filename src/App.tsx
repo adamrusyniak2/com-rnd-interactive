@@ -83,8 +83,7 @@ const Section = ({ id, label, subtitle, children }: { id?: string; label: string
 );
 
 const Background = () => {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useScroll({ container: ref.current ?? undefined });
+  const { scrollYProgress } = useScroll();
   const yMars = useTransform(scrollYProgress, [0, 1], [0, -80]);
   const yCloud = useTransform(scrollYProgress, [0, 1], [0, -40]);
 
